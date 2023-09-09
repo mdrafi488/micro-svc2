@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('CI ') {
+            steps {
+                #Docker Login
+                sh 'aws ecr get-login-password --region ap-southeast-2 | sudo docker login --username AWS --password-stdin 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com'
+                #Docker Build
+                sh 'sudo docker build -t 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com/apache-image:$BUILD_NUMBER .'
+                #Docker Push
+                sh 'sudo docker push 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com/apache-image:$BUILD_NUMBER'
+            }
+        }
+        stage('CD Stage') {
+            steps {
+                
+                sh 'kubectl apply -f deployment.yaml sevice.yaml ingress.yaml namespace.yaml '
+                
+            
+            }
+        }
+        stage('Validation stage') {
+            steps {
+                
+                sh 'kubectl get nodes'
+                sh 'kubectl get pods -A'
+                
+            }
+        }
+        
+    }
+}
