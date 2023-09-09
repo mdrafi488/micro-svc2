@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: static
+  namespace: static
+spec:
+  selector:
+    app: static
+  type: ClusterIP
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: static
+    protocol: TCP
+    port: 
+    targetPort: 
