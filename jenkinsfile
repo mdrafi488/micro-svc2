@@ -14,8 +14,8 @@ pipeline {
         }
         stage('CD Stage') {
             steps {
-                
-                sh 'kubectl apply -f deployment.yaml sevice.yaml ingress.yaml namespace.yaml '
+                cd k8s
+                sh 'kubectl apply -f . '
                 
             
             }

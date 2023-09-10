@@ -7,10 +7,6 @@ spec:
   selector:
     app: static
   type: ClusterIP
-    clientIP:
-      timeoutSeconds: 10800
-  ports:
-  - name: static
-    protocol: TCP
-    port: 
-    targetPort: 
+  ports: 
+    port: 80
+    targetPort: 80
