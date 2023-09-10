@@ -8,9 +8,9 @@ pipeline {
                 # Docker Login
                 aws ecr get-login-password --region ap-southeast-2 | sudo docker login --username AWS --password-stdin 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com
                 # Docker Build
-                sudo docker build -t 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com/apache-image:$BUILD_NUMBER .
+                sudo docker build -t 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com/static:$BUILD_NUMBER .
                 # Docker Push
-                sudo docker push 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com/apache-image:$BUILD_NUMBER
+                sudo docker push 719648668301.dkr.ecr.ap-southeast-2.amazonaws.com/static:$BUILD_NUMBER
                 '''
             }
         }
