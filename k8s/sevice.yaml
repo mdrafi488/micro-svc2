@@ -7,6 +7,8 @@ spec:
   selector:
     app: static
   type: ClusterIP
-  ports: 
+  ports:
+  - name: static
+    protocol: TCP
     port: 80
-    targetPort: 80
+    targetPort: 80 
