@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  static
+  name:  static-app
   namespace: static
   labels:
-    app:  static
+    app:  static-website
 spec:
   selector:
     matchLabels:

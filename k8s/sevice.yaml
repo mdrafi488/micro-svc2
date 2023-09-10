@@ -5,7 +5,7 @@ metadata:
   namespace: static
 spec:
   selector:
-    app: static
+    app: static-website
   type: ClusterIP
   ports:
   - name: static
