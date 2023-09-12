@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: static-stg
+  namespace: apache
+spec:
+  selector:
+    app: static
+  type: Loadbalancer
+  ports:
+  - name: static-stg
+    protocol: TCP
+    port: 80
+    targetPort: 80
