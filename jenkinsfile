@@ -17,7 +17,7 @@ pipeline {
         stage('CD Stage') {
             steps {
                 sh '''
-                kubectl create ns dev
+                # kubectl create ns dev
                 helm upgrade -i static-dev static -n dev  
                 '''
             }
