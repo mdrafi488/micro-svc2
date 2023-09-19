@@ -64,10 +64,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: static-ingress
-  namespace: dev
+  # namespace: dev
 spec:
   rules:
-  - host: dev.owndomain.com
+  - host: {{ .Values.ingressurl }}
     http:
       paths:
       - path: /
