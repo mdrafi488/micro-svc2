@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                 # kubectl create ns dev
-                helm upgrade -i static-stg static -f static/stg-values.yaml -n stage  
+                helm upgrade -i static-dev static -f static/stg-values.yaml -n stage  
                 '''
             }
         }
